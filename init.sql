@@ -5,3 +5,8 @@ CREATE TABLE order_items (
 );
 
 INSERT INTO order_items VALUES (1,'Bike');
+-- Enabled CDC
+ALTER TABLE public.order_items REPLICA IDENTITY FULL;
+ALTER SYSTEM SET wal_level = 'logical';
+
+
